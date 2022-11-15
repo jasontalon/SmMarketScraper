@@ -1,0 +1,12 @@
+version: "3"
+services:
+  db:
+    image: postgres:12.6-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Password123!
+    ports:
+      - "15432:5432"
+    volumes:
+      - ./.db/postgres/db_data:/var/lib/postgresql/data
+      - ./.db/postgres/backups:/backups
